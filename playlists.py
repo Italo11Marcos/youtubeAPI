@@ -6,12 +6,6 @@ def playlists_channel(channel_id):
 
     youtube = build("youtube", "v3", developerKey=api_key)
 
-    playlists_response = youtube.playlists().list(
-        part = "snippet",
-        channelId = channel_id,
-        maxResults = 50
-    ).execute()
-
     playlists = []
 
     nextPage_token = None
